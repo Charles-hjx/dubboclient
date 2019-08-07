@@ -1,5 +1,7 @@
 package cuncurrent;
 
+import java.util.concurrent.Semaphore;
+
 /**
  * @Author: hjx
  * @Date: 2019/7/31
@@ -17,6 +19,7 @@ public class Account {
     }
     //调用了 使用 wait() 的 的方式
     void transfer3(Account target, int atm){
+
         Allocator.getInstance().apply1(this,target);
         //只要获取了 两个资源 才执行下面的操作
         try {
@@ -31,7 +34,6 @@ public class Account {
         } finally {
             Allocator.getInstance().free1(this,target);
         }
-
 
     }
 
