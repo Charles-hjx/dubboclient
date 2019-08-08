@@ -1,9 +1,6 @@
 package cuncurrent;
 
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
+import java.util.concurrent.*;
 
 /**
  * @Author: hjx
@@ -74,4 +71,11 @@ public class CompletableTest {
     private static void save(Integer price){
 
     }
+
+
+    public static void com(){
+//        CompletableFuture
+
+    }
+
 }
