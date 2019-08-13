@@ -7,11 +7,12 @@
     <dubbo:application name="dubbo-client" owner="hjx"/>
 
     <!--注册中心-->
-    <dubbo:registry address="N/A"/>
+    <!--<dubbo:registry address="N/A"/>-->
+    <dubbo:registry address="zookeeper://192.168.127.132:2181"/>
 
     <dubbo:protocol name="dubbo" port="20880"/>
 
-    <dubbo:reference id="helloService" interface="com.hjx.dubbo.interfaces.APIHello"
-    url="dubbo://192.168.127.1:20880/com.hjx.dubbo.interfaces.APIHello"/>
+    <dubbo:reference id="helloService" interface="com.hjx.dubbo.interfaces.APIHello"  version="1.0.1"
+        cluster="broadcast" mock="dubbo.MockTest"/> <!--url="dubbo://192.168.127.1:20880/com.hjx.dubbo.interfaces.APIHello"-->
 
 </beans>
